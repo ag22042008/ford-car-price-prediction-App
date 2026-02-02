@@ -51,7 +51,7 @@ with left:
         f"{r2:.3f}",
         help="How well the model explains car prices (closer to 1 is better).",
     )
-      st.metric(
+    st.metric(
         "Adjusted R²",
         f"{adjusted_r2:.3f}",
         help="R² adjusted for the number of input features (penalizes unnecessary features).",
