@@ -7,7 +7,7 @@ from sklearn.metrics import r2_score, mean_absolute_error
 
 st.set_page_config(page_title="Car Price Estimator", layout="wide")
 
-st.title("🚗 How Much Is This Ford Really Worth?")
+st.title("How Much Is This Ford Really Worth?")
 st.caption(
     "Enter a few details about the car and get a realistic price estimate based on historical Ford car data."
 )
@@ -60,7 +60,7 @@ with left:
     )
 
 with center:
-    st.subheader("🔧 Tell Me About the Car")
+    st.subheader(" Tell Me About the Car")
 
     year = st.slider("Manufacturing year", int(df.year.min()), int(df.year.max()), 2018)
     mileage = st.slider("How many kilometres has it run?", 0, int(df.mileage.max()), 20000)
@@ -112,7 +112,7 @@ with center:
             symbol = "£"
 
         st.success(
-            f"✅ Based on the details you entered, this car is worth around **{symbol} {int(prediction):,}**"
+            f" Based on the details you entered, this car is worth around **{symbol} {int(prediction):,}**"
         )
 
         st.caption(
