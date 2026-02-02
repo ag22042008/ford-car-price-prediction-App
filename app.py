@@ -44,7 +44,7 @@ mae = mean_absolute_error(y_test, y_test_pred)
 left, center, right = st.columns([1, 2, 1])
 
 with left:
-    st.subheader("📊 How Good Is This Model?")
+    st.subheader("How Good Is This Model?")
 
     st.metric(
         "R² Score",
