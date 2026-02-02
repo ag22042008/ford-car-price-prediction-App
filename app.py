@@ -36,6 +36,9 @@ model.fit(X_train, y_train)
 
 y_test_pred = model.predict(X_test)
 r2 = r2_score(y_test, y_test_pred)
+n = X_test.shape[0]
+p = X_test.shape[1]
+adjusted_r2 = 1 - ((1 - r2) * (n - 1) / (n - p - 1))
 mae = mean_absolute_error(y_test, y_test_pred)
 
 left, center, right = st.columns([1, 2, 1])
@@ -47,6 +50,11 @@ with left:
         "R² Score",
         f"{r2:.3f}",
         help="How well the model explains car prices (closer to 1 is better).",
+    )
+      st.metric(
+        "Adjusted R²",
+        f"{adjusted_r2:.3f}",
+        help="R² adjusted for the number of input features (penalizes unnecessary features).",
     )
 
     st.metric(
