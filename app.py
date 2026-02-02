@@ -140,13 +140,12 @@ with center:
     if st.button(" Estimate My Car’s Price", use_container_width=True):
         prediction = model.predict(input_df)[0]
 
-        st.success(
-            f" Based on the details you entered, this car is worth around **₹ {int(prediction):,}**"
-        )
+      st.success(
+    f"✅ Based on the details you entered, this car is worth around **£ {int(prediction):,}**"
+)
 
-        st.caption(
-            "This is an estimate. Actual prices can vary depending on condition, location, and market demand."
-        )
+        st.caption("Prices are based on UK market data (GBP).")
+
 
 with right:
     st.empty()
